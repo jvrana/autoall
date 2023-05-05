@@ -1,0 +1,2 @@
+[console_scripts]
+pyautoall = pyautoall:main

@@ -24,9 +24,19 @@ positional arguments:
 
 options:
   -h, --help     show this help message and exit
-  -i, --inplace  (default: False) If set, will automatically update the file
+  -i, --inplace  (default: False) If set, will automatically update the file.
   -c, --concise  (default: False) If set, will only print the __all__ statement for copying and pasting the file manually. Overrides -i, --inplace
 ```
 
 ## Adding autoall to PyCharm
+
+After installation, get the absolute path of pyautoall by running:
+
+```shell
+which pyautoall
+```
+![Alt text](pycharm_external_tools.png "PyCharm External Tools Settings")
+
+
+
 

@@ -1,7 +1,7 @@
 # pyautoall
 
 Tool for automatically generating `__all__` assignments
-in `__init__.py` files. You can add it to PyCharm to automatically generate `__all__` from imported located in the `__init__` file (uses AST parsing). Thats it. It might save you a few minutes a day.
+in `__init__.py` files. You can add it to PyCharm to automatically generate `__all__` from imported located in the `__init__` file (uses AST parsing). Thats it. It might save you a few minutes a day. Enjoy.
 
 ## Installation
 

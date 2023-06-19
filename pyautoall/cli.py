@@ -7,6 +7,8 @@ import something
 # import something
 import argparse
 import ast
+import fnmatch
+import os.path
 from builtins import open, classmethod
 from os.path import abspath
 from typing import Optional
@@ -22,11 +24,21 @@ parser.add_argument('-i', '--inplace',
 parser.add_argument('-c', '--concise',
                     action='store_true', help="(default: False) If set, will only print the __all__ statement for "
                                               "copying and pasting the file manually. Overrides -i, --inplace")
+parser.add_argument('--allowable_files',
+                    action='store_true', default="*/__init__.py", help="Allowable filenames to run the tool on. Can use globbing patterns. Default is \"__init__.py\"")
 
 
 def main():
     args = parser.parse_args()
     filepath = args.filepath
+    filepattern = args.allowable_files
+    if not os.path.isfile(filepath):
+        raise RuntimeError(f"File '{filepath}' does not exist")
+
+    if not fnmatch.fnmatch(filepath, filepattern):
+        raise RuntimeError(f"File '{filepath}' does not match allowable_files=\"{filepattern}\"")
+
+
     inplace = args.inplace
     concise = args.concise
 
